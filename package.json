@@ -1,0 +1,53 @@
+{
+  "name": "example-auth",
+  "version": "1.0.0",
+  "description": "example-auth",
+  "keywords": [
+    "loopback-application",
+    "loopback"
+  ],
+  "main": "dist/index.js",
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "clean": "rimraf dist *.tsbuildinfo .eslintcache",
+    "pretest": "npm run clean && npm run build",
+    "migrate": "node ./dist/migrate",
+    "openapi-spec": "node ./dist/openapi-spec",
+    "start": "npm run build && node -r source-map-support/register .",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "author": "",
+  "license": "",
+  "files": [
+    "README.md",
+    "dist",
+    "src",
+    "!*/__tests__"
+  ],
+  "dependencies": {
+    "@loopback/boot": "^2.3.2",
+    "@loopback/context": "^3.8.2",
+    "@loopback/core": "^2.7.1",
+    "@loopback/openapi-v3": "^3.4.2",
+    "@loopback/repository": "^2.6.0",
+    "@loopback/rest": "^5.1.0",
+    "@loopback/rest-explorer": "^2.2.3",
+    "@types/mocha": "^7.0.2",
+    "loopback-connector-mongodb": "^5.2.3",
+    "tslib": "^2.0.0"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2",
+    "source-map-support": "^0.5.19",
+    "@loopback/testlab": "^3.1.6",
+    "@types/node": "^10.17.24",
+    "typescript": "~3.9.3"
+  }
+}
